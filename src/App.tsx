@@ -1,9 +1,5 @@
-import React from 'react';
+import React, { FC } from 'react';
 
-function App() {
-  return (
-    <></>
-  );
-}
+const App: FC = () => <div className="container" />;
 
 export default App;
