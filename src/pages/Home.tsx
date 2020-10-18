@@ -1,14 +1,12 @@
-import React, { FC } from 'react'
-import { Pagination } from '../components/Pagination'
-import { Repos } from '../components/Repos'
-import { Search } from '../components/Search'
+import React, { FC } from 'react';
+import { Pagination } from '../components/Pagination';
+import { Repos } from '../components/Repos';
+import { Search } from '../components/Search';
 
-export const Home: FC = () => {
-  return (
-    <>
-      <Search />
-      <Repos />
-      <Pagination />
-    </>
-  )
-}
+export const Home: FC = () => (
+  <>
+    <Search />
+    <Repos />
+    <Pagination />
+  </>
+);

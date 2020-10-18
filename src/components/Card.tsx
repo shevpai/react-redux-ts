@@ -1,9 +1,3 @@
-import React, { FC } from 'react'
+import React, { FC } from 'react';
 
-export const Card: FC = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+export const Card: FC = () => <div />;

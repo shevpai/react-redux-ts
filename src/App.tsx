@@ -3,16 +3,14 @@ import { Alert } from './components/Alert';
 import { Navbar } from './components/Navbar';
 import { Home } from './pages/Home';
 
-const App: FC = () => {
-  return (
-    <>
-      <Navbar />
-      <Alert />
-      <div className="container">
-        <Home />
-      </div>
-    </>
-  )
-}
+const App: FC = () => (
+  <>
+    <Navbar />
+    <Alert />
+    <div className="container">
+      <Home />
+    </div>
+  </>
+);
 
 export default App;
