@@ -1,0 +1,5 @@
+@import './mixins';
+
+.alert-centered {
+  @include centered();
+}

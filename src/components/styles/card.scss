@@ -1,0 +1,11 @@
+.body__extended {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100px;
+}
+
+.card__container {
+  display: flex;
+  align-items: center;
+}
