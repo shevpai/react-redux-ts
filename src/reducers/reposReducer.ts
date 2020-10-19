@@ -8,7 +8,7 @@ import {
   ReposActionTypes,
 } from './types';
 
-export type ReposState = {
+type ReposState = {
   items: Array<ItemSchema>;
   isFetching: boolean;
   searchQuery: string;
