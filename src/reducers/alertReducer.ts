@@ -1,6 +1,6 @@
 import { SHOW_ALERT, HIDE_ALERT, AlertActionTypes } from './types';
 
-type AlertState = {
+export type AlertState = {
   text?: string;
   type?: string;
   visible: boolean;

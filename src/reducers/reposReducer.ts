@@ -1,3 +1,4 @@
+import { type } from 'os';
 import { ItemSchema } from '../schemes/ItemSchema';
 import {
   SET_CURRENT_PAGE,
@@ -8,7 +9,7 @@ import {
   ReposActionTypes,
 } from './types';
 
-type ReposState = {
+export type ReposState = {
   items: Array<ItemSchema>;
   isFetching: boolean;
   searchQuery: string;
