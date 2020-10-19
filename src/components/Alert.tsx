@@ -1,10 +1,17 @@
 import React, { FC } from 'react';
+import { useAlert } from '../hooks/useAlert';
 
-export const Alert: FC = () => (
-  <div className="alert alert-secondary alert-dismissible alert-centered mb-4">
-    Alert Test
-    <button type="button" className="close" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-);
+export const Alert: FC = () => {
+  const { alert, hide } = useAlert();
+
+  if (!alert.visible) return null;
+
+  return (
+    <div className={`alert alert-${alert.type} alert-dismissible alert-centered mb-4`}>
+      Alert Test
+      <button type="button" className="close" aria-label="Close" onClick={hide}>
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  );
+};

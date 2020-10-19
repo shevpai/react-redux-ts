@@ -1,8 +1,13 @@
 import React, { FC } from 'react';
+import { ItemSchema } from '../schemes/ItemSchema';
 import { Card } from './Card';
 
-export const Repo: FC = () => (
+export type RepoPropTypes = {
+  repo: ItemSchema;
+};
+
+export const Repo: FC<RepoPropTypes> = ({ repo }: RepoPropTypes) => (
   <div className="col-sm-6 mb-1">
-    <Card />
+    <Card repo={repo} />
   </div>
 );
