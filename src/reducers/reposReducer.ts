@@ -6,7 +6,6 @@ import {
   START_FETCHING,
   STOP_FETCHING,
   ReposActionTypes,
-  CLEAR_REPOS,
 } from './types';
 
 export type ReposState = {
@@ -44,11 +43,6 @@ export function reposReducer(state = initialState, action: ReposActionTypes): Re
       return {
         ...state,
         isFetching: false,
-      };
-    case CLEAR_REPOS:
-      return {
-        ...state,
-        items: [],
       };
     case SET_CURRENT_PAGE:
       return {

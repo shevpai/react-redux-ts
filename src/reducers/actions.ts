@@ -9,7 +9,6 @@ import {
   STOP_FETCHING,
   ReposActionTypes,
   AlertActionTypes,
-  CLEAR_REPOS,
 } from './types';
 
 // repos async
@@ -25,10 +24,6 @@ export const startFetching = (): ReposActionTypes => ({
 
 export const stopFetching = (): ReposActionTypes => ({
   type: STOP_FETCHING,
-});
-
-export const clearRepos = (): ReposActionTypes => ({
-  type: CLEAR_REPOS,
 });
 
 export const setCurrentPage = (page: number): ReposActionTypes => ({
