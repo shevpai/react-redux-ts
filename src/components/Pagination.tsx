@@ -33,7 +33,7 @@ export const Pagination: FC = () => {
               </a>
             </li>
             {pages.map((page, id) => (
-              <li key={id} className={`page-item ${currentPage == page ? 'active' : ''}`}>
+              <li key={id} className={`page-item ${currentPage === page ? 'active' : ''}`}>
                 <a
                   className="page-link"
                   href={`#${currentPage}`}

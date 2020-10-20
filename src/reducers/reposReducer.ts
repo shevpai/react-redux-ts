@@ -1,4 +1,3 @@
-import { type } from 'os';
 import { ItemSchema } from '../schemes/ItemSchema';
 import {
   SET_CURRENT_PAGE,

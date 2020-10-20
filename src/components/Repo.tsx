@@ -6,8 +6,4 @@ export type RepoPropTypes = {
   repo: ItemSchema;
 };
 
-export const Repo: FC<RepoPropTypes> = ({ repo }: RepoPropTypes) => (
-  <div className="col-sm-6 mb-1">
-    <Card repo={repo} />
-  </div>
-);
+export const Repo: FC<RepoPropTypes> = ({ repo }: RepoPropTypes) => <Card repo={repo} />;

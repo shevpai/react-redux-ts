@@ -8,7 +8,7 @@ export const Alert: FC = () => {
 
   return (
     <div className={`alert alert-${alert.type} alert-dismissible alert-centered mb-4`}>
-      Alert Test
+      {alert.text}
       <button type="button" className="close" aria-label="Close" onClick={hide}>
         <span aria-hidden="true">&times;</span>
       </button>

@@ -1,31 +1,20 @@
+type numstr = number | string;
+
 export function formatDate(date: Date): string {
-  let DD; let MM; let YY; let HH; let 
-    MN;
+  let dd: numstr = date.getDate();
+  if (dd < 10) dd = `0${dd}`;
 
-  const dd = date.getDate();
-  if (dd < 10) {
-    DD = `0${dd}`;
-  }
+  let mm: numstr = date.getMonth() + 1;
+  if (mm < 10) mm = `0${mm}`;
 
-  const mm = date.getMonth() + 1;
-  if (mm < 10) {
-    MM = `0${mm}`;
-  }
+  let yy: numstr = date.getFullYear() % 100;
+  if (yy < 10) yy = `0${yy}`;
 
-  const yy = date.getFullYear() % 100;
-  if (yy < 10) {
-    YY = `0${yy}`;
-  }
+  let hh: numstr = date.getHours();
+  if (hh < 10) hh = `0${hh}`;
 
-  const hh = date.getHours();
-  if (hh < 10) {
-    HH = `0${hh}`;
-  }
+  let mn: numstr = date.getMinutes();
+  if (mn < 10) mn = `0${mn}`;
 
-  const mn = date.getMinutes();
-  if (mn < 10) {
-    MN = `0${mn}`;
-  }
-
-  return `${DD}.${MM}.${YY}  ${HH}:${MN}`;
+  return `${dd}.${mm}.${yy}  ${hh}:${mn}`;
 }
