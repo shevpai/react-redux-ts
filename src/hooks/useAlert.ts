@@ -11,7 +11,7 @@ export function useAlert() {
     dispatch(hideAlert());
   };
 
-  const show = (text: string, type = 'secondary', visible: boolean): void => {
+  const show = (text: string, type: string, visible: boolean): void => {
     dispatch(showAlert(text, type, visible));
     setTimeout(hide, 5000);
   };

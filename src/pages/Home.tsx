@@ -10,7 +10,9 @@ import { AppState } from '../reducers/rootReducer';
 
 export const Home: FC = () => {
   const { getRepos, isFetching: loading } = useGithub();
-  const { currentPage, perPage, searchQuery } = useSelector<AppState, ReposState>(
+  const {
+    items, currentPage, perPage, searchQuery, 
+  } = useSelector<AppState, ReposState>(
     (state) => state.repos,
   );
 
@@ -28,7 +30,7 @@ export const Home: FC = () => {
       ) : (
         <>
           <Repos />
-          <Pagination />
+          {items[0] && <Pagination />}
         </>
       )}
     </>

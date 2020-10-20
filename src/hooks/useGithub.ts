@@ -16,6 +16,9 @@ export function useGithub() {
       const response = await axios.get(
         `http://api.github.com/search/repositories?q=${searchQuery}&sort=stars&per_page=${perPage}&page=${currentPage}`,
       );
+
+      if (!response.data.items[0]) alert.show('No matches', 'secondary', true);
+
       dispatch(setRepos(response.data));
       dispatch(stopFetching());
     } catch (e) {

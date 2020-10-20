@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useAlert } from '../hooks/useAlert';
-import { setCurrentPage, setSearchQuery } from '../reducers/actions';
+import { clearRepos, setCurrentPage, setSearchQuery } from '../reducers/actions';
 
 export const Search: FC = () => {
   const alert = useAlert();
@@ -16,6 +16,8 @@ export const Search: FC = () => {
     if (event.key !== 'Enter') {
       return;
     }
+
+    dispatch(clearRepos());
 
     if (value.trim()) {
       dispatch(setCurrentPage(1));

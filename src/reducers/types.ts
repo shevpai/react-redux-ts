@@ -11,6 +11,11 @@ type StopFetching = {
   type: typeof STOP_FETCHING;
 };
 
+export const CLEAR_REPOS = 'CLEAR_REPOS';
+type ClearRepos = {
+  type: typeof CLEAR_REPOS;
+};
+
 export const SET_SEARCH_QUERY = 'SET_SEARCH_QUERY';
 type SetSearchQuery = {
   type: typeof SET_SEARCH_QUERY;
@@ -46,6 +51,7 @@ export type ReposActionTypes =
   | StopFetching
   | SetSearchQuery
   | SetCurrentPage
-  | SetRepos;
+  | SetRepos
+  | ClearRepos;
 
 export type AlertActionTypes = ShowAlert | HideAlert;
