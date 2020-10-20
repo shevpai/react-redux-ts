@@ -1,4 +1,4 @@
-### Simple project to study static type definitions with TypeScript in React-Redux environment case. 
+### Simple project to study static type definitions with TypeScript in React-Redux environment
 ***
 Deployed on [firebase](https://search-repo.web.app)
 
