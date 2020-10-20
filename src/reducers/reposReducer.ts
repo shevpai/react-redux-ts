@@ -23,7 +23,7 @@ const initialState: ReposState = {
   isFetching: false,
   searchQuery: 'stars:%3E1',
   currentPage: 1,
-  perPage: 20,
+  perPage: 12,
   totalCount: 0,
 };
 

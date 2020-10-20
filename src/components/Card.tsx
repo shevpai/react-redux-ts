@@ -3,23 +3,11 @@ import { formatDate } from '../utils/formatDate';
 import { starFormatter } from '../utils/starFormatter';
 import { RepoPropTypes } from './Repo';
 
-const body: React.CSSProperties = {
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center',
-  minHeight: 100,
-};
-
-const container: React.CSSProperties = {
-  display: 'flex',
-  alignItems: 'center',
-};
-
 export const Card: FC<RepoPropTypes> = ({ repo }: RepoPropTypes) => (
   <div className="col-sm-6 mb-1" key={repo.id}>
     <div className="card mb-4">
-      <div className="card-body" style={body}>
-        <div style={container}>
+      <div className="card-body card-body__extnd">
+        <div className="flex--align__center">
           <svg
             className="octicon-repo mr-2 mb-1 flex-shrink-0"
             viewBox="0 0 16 16"
@@ -40,7 +28,7 @@ export const Card: FC<RepoPropTypes> = ({ repo }: RepoPropTypes) => (
             </a>
           </h5>
         </div>
-        <div style={container}>
+        <div className="flex--align__center">
           <svg
             aria-label="star"
             className="octicon octicon-star mr-1 mb-1 flex-shrink-0"

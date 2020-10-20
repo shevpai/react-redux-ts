@@ -1,0 +1,19 @@
+.card-body__extnd {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100px;
+}
+
+.flex--align__center {
+  display: flex;
+  align-items: center;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+.octicon-repo {
+fill: #586069!important;
+}
