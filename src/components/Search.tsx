@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useAlert } from '../hooks/useAlert';
-import { clearRepos, setCurrentPage, setSearchQuery } from '../reducers/actions';
+import { setCurrentPage, setSearchQuery } from '../reducers/actions';
 
 export const Search: FC = () => {
   const alert = useAlert();
@@ -17,9 +17,8 @@ export const Search: FC = () => {
       return;
     }
 
-    dispatch(clearRepos());
-
     if (value.trim()) {
+      alert.hide()
       dispatch(setCurrentPage(1));
       dispatch(setSearchQuery(value));
     } else alert.show('Input is empty! Please, enter some value', 'warning', true);

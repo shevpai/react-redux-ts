@@ -14,7 +14,7 @@ export function useGithub() {
     try {
       dispatch(startFetching());
       const response = await axios.get(
-        `http://api.github.com/search/repositories?q=${searchQuery}&sort=stars&per_page=${perPage}&page=${currentPage}`,
+        `https://api.github.com/search/repositories?q=${searchQuery}&sort=stars&per_page=${perPage}&page=${currentPage}`,
       );
 
       if (!response.data.items[0]) alert.show('No matches', 'secondary', true);
