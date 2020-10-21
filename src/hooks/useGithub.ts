@@ -28,7 +28,7 @@ export function useGithub() {
       dispatch(setRepos(response.data));
       dispatch(stopFetching());
     } catch (e) {
-      alert.show('Something went wrong', 'danger', true);
+      alert.show('Something went wrong (api rate limit exceeded)', 'danger', true);
     }
   };
 

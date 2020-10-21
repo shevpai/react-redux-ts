@@ -14,7 +14,7 @@ export const Pagination: FC = () => {
 
   const pages: number[] = [];
 
-  pageCreator(pages, pagesCount, currentPage);
+  pageCreator(pages, pagesCount, currentPage, 7);
 
   return (
     <>
