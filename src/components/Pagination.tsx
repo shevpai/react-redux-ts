@@ -6,7 +6,7 @@ import { AppState } from '../reducers/rootReducer';
 import { pageCreator } from '../utils/pageCreator';
 
 export const Pagination: FC = () => {
-  const { toPage } = useGithub()
+  const { toPage } = useGithub();
   const { totalCount, perPage, currentPage } = useSelector<AppState, ReposState>(
     (state) => state.repos,
   );
@@ -34,11 +34,7 @@ export const Pagination: FC = () => {
             </li>
             {pages.map((page, id) => (
               <li key={id} className={`page-item ${currentPage === page ? 'active' : ''}`}>
-                <a
-                  className="page-link"
-                  href={`#${currentPage}`}
-                  onClick={toPage.bind(null, page)}
-                >
+                <a className="page-link" href={`#${currentPage}`} onClick={toPage.bind(null, page)}>
                   {page}
                 </a>
               </li>

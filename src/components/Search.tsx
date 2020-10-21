@@ -4,7 +4,7 @@ import { useGithub } from '../hooks/useGithub';
 
 export const Search: FC = () => {
   const alert = useAlert();
-  const { toPage, queryHandler} = useGithub()
+  const { toPage, queryHandler } = useGithub();
   const [value, setValue] = useState('');
 
   const changeHandler = (event: React.ChangeEvent<HTMLInputElement>): void => {
@@ -17,9 +17,9 @@ export const Search: FC = () => {
     }
 
     if (value.trim()) {
-      alert.hide()
-      toPage(1)
-      queryHandler(value)
+      alert.hide();
+      toPage(1);
+      queryHandler(value);
     } else alert.show('Input is empty! Please, enter some value', 'warning', true);
 
     setValue('');
