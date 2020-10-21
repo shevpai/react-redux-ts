@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { AppState } from '../reducers/rootReducer';
 import { ReposState } from '../reducers/reposReducer';
 import { useAlert } from './useAlert';
-import { setRepos, startFetching, stopFetching } from '../reducers/actions';
+import { setCurrentPage, setRepos, setSearchQuery, startFetching, stopFetching } from '../reducers/actions';
 
 export function useGithub() {
   const dispatch = useDispatch();
@@ -26,8 +26,18 @@ export function useGithub() {
     }
   };
 
+  const toPage = (page: number) : void => {
+    dispatch(setCurrentPage(page));
+  }
+
+  const queryHandler = (value: string) => {
+    dispatch(setSearchQuery(value));
+  }
+
   return {
     getRepos,
+    toPage,
+    queryHandler,
     items,
     isFetching,
   };

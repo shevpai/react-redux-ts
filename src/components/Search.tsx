@@ -1,11 +1,10 @@
 import React, { FC, useState } from 'react';
-import { useDispatch } from 'react-redux';
 import { useAlert } from '../hooks/useAlert';
-import { setCurrentPage, setSearchQuery } from '../reducers/actions';
+import { useGithub } from '../hooks/useGithub';
 
 export const Search: FC = () => {
   const alert = useAlert();
-  const dispatch = useDispatch();
+  const { toPage, queryHandler} = useGithub()
   const [value, setValue] = useState('');
 
   const changeHandler = (event: React.ChangeEvent<HTMLInputElement>): void => {
@@ -19,8 +18,8 @@ export const Search: FC = () => {
 
     if (value.trim()) {
       alert.hide()
-      dispatch(setCurrentPage(1));
-      dispatch(setSearchQuery(value));
+      toPage(1)
+      queryHandler(value)
     } else alert.show('Input is empty! Please, enter some value', 'warning', true);
 
     setValue('');

@@ -1,12 +1,12 @@
 import React, { FC } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { setCurrentPage } from '../reducers/actions';
+import { useSelector } from 'react-redux';
+import { useGithub } from '../hooks/useGithub';
 import { ReposState } from '../reducers/reposReducer';
 import { AppState } from '../reducers/rootReducer';
 import { pageCreator } from '../utils/pageCreator';
 
 export const Pagination: FC = () => {
-  const dispatch = useDispatch();
+  const { toPage } = useGithub()
   const { totalCount, perPage, currentPage } = useSelector<AppState, ReposState>(
     (state) => state.repos,
   );
@@ -27,9 +27,9 @@ export const Pagination: FC = () => {
                 href={`#${currentPage}`}
                 tabIndex={-1}
                 aria-disabled="true"
-                onClick={() => dispatch(setCurrentPage(currentPage - 1))}
+                onClick={toPage.bind(null, currentPage - 1)}
               >
-                Back
+                <span aria-hidden="true">&laquo;</span>
               </a>
             </li>
             {pages.map((page, id) => (
@@ -37,7 +37,7 @@ export const Pagination: FC = () => {
                 <a
                   className="page-link"
                   href={`#${currentPage}`}
-                  onClick={() => dispatch(setCurrentPage(page))}
+                  onClick={toPage.bind(null, page)}
                 >
                   {page}
                 </a>
@@ -47,9 +47,9 @@ export const Pagination: FC = () => {
               <a
                 className="page-link"
                 href={`#${currentPage}`}
-                onClick={() => dispatch(setCurrentPage(currentPage + 1))}
+                onClick={toPage.bind(null, currentPage + 1)}
               >
-                Next
+                <span aria-hidden="true">&raquo;</span>
               </a>
             </li>
           </ul>
