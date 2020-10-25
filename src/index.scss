@@ -1,18 +1,18 @@
-@import '~bootstrap/scss/bootstrap';
-@import './components/styles/alert.scss';
-@import './components/styles/search';
-@import './components/styles/loader.scss';
-@import './components/styles/card.scss';
+@import "~bootstrap/scss/bootstrap";
+@import "./components/styles/alert.scss";
+@import "./components/styles/search";
+@import "./components/styles/loader.scss";
+@import "./components/styles/card.scss";
 
 body {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
